@@ -1,6 +1,5 @@
 package com.romanstetsiuk.myapp;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -46,6 +45,21 @@ public class BeanConfiguration {
         items.add(cola());
         store.setItems(items);
         return store;
+    }
+
+    @Bean
+    MyListStrings myList() {
+        MyListStrings ms = new MyListStrings();
+        List<String> myListStrings = new ArrayList<String>();
+        myListStrings.add("Hello");
+        myListStrings.add("how");
+        myListStrings.add("Are");
+        myListStrings.add("You");
+        myListStrings.add("?");
+
+        ms.setLista(myListStrings);
+
+        return ms;
     }
 
 

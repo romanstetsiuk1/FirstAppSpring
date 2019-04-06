@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class MyappApplication implements CommandLineRunner {
 
@@ -28,6 +30,9 @@ public class MyappApplication implements CommandLineRunner {
     @Qualifier("mysql")
     ItemDao itemDao;
 
+    @Autowired
+    MyListStrings mylist;
+
     public static void main(String[] args) {
         SpringApplication.run(MyappApplication.class, args);
     }
@@ -42,7 +47,10 @@ public class MyappApplication implements CommandLineRunner {
 //
 //        System.out.println(store);
 
-        Item item = itemDao.getItemByName("asddsaasd");
-        System.out.println(item);
+//        Item item = itemDao.getItemByName("asddsaasd");
+//        System.out.println(item);
+
+        System.out.println(mylist);
+
     }
 }
