@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 
 import java.util.List;
 
@@ -33,6 +34,9 @@ public class MyappApplication implements CommandLineRunner {
     @Autowired
     MyListStrings mylist;
 
+    @Autowired
+    StringEffect apply;
+
     public static void main(String[] args) {
         SpringApplication.run(MyappApplication.class, args);
     }
@@ -50,7 +54,10 @@ public class MyappApplication implements CommandLineRunner {
 //        Item item = itemDao.getItemByName("asddsaasd");
 //        System.out.println(item);
 
-        System.out.println(mylist);
+//        System.out.println(mylist);
+        String s = "ala ma kota";
+
+        System.out.println(apply.apply(s));
 
     }
 }
