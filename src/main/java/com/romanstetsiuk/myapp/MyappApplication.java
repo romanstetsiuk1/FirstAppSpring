@@ -1,6 +1,7 @@
 package com.romanstetsiuk.myapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +25,7 @@ public class MyappApplication implements CommandLineRunner {
     Store store;
 
     @Autowired
+    @Qualifier("mysql")
     ItemDao itemDao;
 
     public static void main(String[] args) {
