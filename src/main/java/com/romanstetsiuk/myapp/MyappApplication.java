@@ -20,16 +20,27 @@ public class MyappApplication implements CommandLineRunner {
         this.version = version;
     }
 
+    @Autowired
+    Store store;
+
+    @Autowired
+    ItemDao itemDao;
+
     public static void main(String[] args) {
         SpringApplication.run(MyappApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello word!");
+//        System.out.println("Hello word!");
+//
+//        System.out.println(applicationName);
+//
+//        System.out.println(version);
+//
+//        System.out.println(store);
 
-        System.out.println(applicationName);
-
-        System.out.println(version);
+        Item item = itemDao.getItemByName("asddsaasd");
+        System.out.println(item);
     }
 }
